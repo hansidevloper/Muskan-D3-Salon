@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan D3 Salon | Premium Unisex Salon in Hansi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --matte-gold: #c5a059;
+            --deep-black: #121212;
+            --soft-grey: #1f1f1f;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--deep-black);
+            color: #d1d1d1;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 1px;
+        }
+        .luxury-card {
+            background: var(--soft-grey);
+            border: 1px solid rgba(197, 160, 89, 0.15);
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .luxury-card:hover {
+            border-color: var(--matte-gold);
+            background: #252525;
+        }
+        .btn-outline-gold {
+            border: 1px solid var(--matte-gold);
+            color: var(--matte-gold);
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+        .btn-outline-gold:hover {
+            background: var(--matte-gold);
+            color: #000;
+        }
+        .gold-text {
+            color: var(--matte-gold);
+        }
+        .owner-image-container {
+            position: relative;
+            padding: 10px;
+        }
+        .owner-image-container::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 1px solid var(--matte-gold);
+            border-radius: 50%;
+            transform: scale(0.9);
+            transition: 0.5s;
+        }
+        .owner-image-container:hover::before {
+            transform: scale(1);
+        }
+        @keyframes subtleFadeUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .reveal {
+            animation: subtleFadeUp 1s ease forwards;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <!-- Navigation with Logo -->
+    <nav class="py-8 text-center reveal">
+        <div class="flex flex-col items-center">
+            <img src="logo.png" alt="Muskan D3 Salon" class="h-14 w-auto mb-3">
+            <span class="text-[10px] tracking-[0.5em] uppercase text-gray-500">Est. 2020</span>
+            <div class="w-12 h-[1px] bg-[#c5a059] mt-4 opacity-50"></div>
+        </div>
+    </nav>
+
+    <div class="max-w-xl mx-auto px-8 space-y-16">
+       
+        <!-- Owner Section -->
+        <header class="text-center space-y-6 reveal" style="animation-delay: 0.2s;">
+            <div class="flex justify-center">
+                <div class="owner-image-container">
+                    <img src="owner.png"
+                         alt="Muskan D - Creative Director"
+                         class="w-36 h-36 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+            </div>
+            <div>
+                <h1 class="text-4xl font-light serif italic gold-text">Muskan D</h1>
+                <p class="text-[11px] tracking-[0.3em] uppercase text-gray-500 mt-2">Creative Director & Founder</p>
+            </div>
+        </header>
+
+        <!-- Action Links -->
+        <div class="grid gap-5 reveal" style="animation-delay: 0.4s;">
+            <a href="tel:+919812084102" class="btn-outline-gold p-4 rounded-sm flex items-center justify-center space-x-3 text-sm tracking-[0.2em] uppercase font-light">
+                <i class="fas fa-calendar-alt text-xs"></i>
+                <span>Book Appointment</span>
+            </a>
+           
+            <div class="grid grid-cols-2 gap-4">
+                <a href="https://wa.me/919812084102" class="luxury-card p-4 rounded-sm flex flex-col items-center justify-center space-y-2 group">
+                    <i class="fab fa-whatsapp text-lg opacity-60 group-hover:opacity-100 group-hover:text-green-500 transition-all"></i>
+                    <span class="text-[10px] tracking-widest uppercase">WhatsApp</span>
+                </a>
+                <a href="https://www.instagram.com/muskan.d3/" target="_blank" class="luxury-card p-4 rounded-sm flex flex-col items-center justify-center space-y-2 group">
+                    <i class="fab fa-instagram text-lg opacity-60 group-hover:opacity-100 group-hover:text-pink-500 transition-all"></i>
+                    <span class="text-[10px] tracking-widest uppercase">Instagram</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <section class="space-y-8 reveal" style="animation-delay: 0.6s;">
+            <div class="flex items-center justify-center space-x-4">
+                <div class="h-[0.5px] w-8 bg-gray-700"></div>
+                <h3 class="text-2xl font-light serif italic tracking-wider">Our Services</h3>
+                <div class="h-[0.5px] w-8 bg-gray-700"></div>
+            </div>
+            <div class="space-y-4">
+                <div class="luxury-card p-6 flex justify-between items-center group">
+                    <div class="space-y-1">
+                        <h4 class="text-sm font-semibold tracking-wide uppercase group-hover:gold-text transition-colors">Haircut & Styling</h4>
+                        <p class="text-[10px] text-gray-500 italic">Trendy cuts for men, women and kids</p>
+                    </div>
+                    <span class="gold-text text-sm serif italic">On Request</span>
+                </div>
+                <div class="luxury-card p-6 flex justify-between items-center group">
+                    <div class="space-y-1">
+                        <h4 class="text-sm font-semibold tracking-wide uppercase group-hover:gold-text transition-colors">Premium Hair Treatments</h4>
+                        <p class="text-[10px] text-gray-500 italic">Keratin, Smoothing, Nano Plastia, Hair Botox</p>
+                    </div>
+                    <span class="gold-text text-sm serif italic">On Request</span>
+                </div>
+                <div class="luxury-card p-6 flex justify-between items-center group">
+                    <div class="space-y-1">
+                        <h4 class="text-sm font-semibold tracking-wide uppercase group-hover:gold-text transition-colors">PRO-LISS Extreme</h4>
+                        <p class="text-[10px] text-gray-500 italic">Fast damage repair, deep hydration and shine</p>
+                    </div>
+                    <span class="gold-text text-sm serif italic">On Request</span>
+                </div>
+                <div class="luxury-card p-6 flex justify-between items-center group">
+                    <div class="space-y-1">
+                        <h4 class="text-sm font-semibold tracking-wide uppercase group-hover:gold-text transition-colors">Bridal & Party Makeup</h4>
+                        <p class="text-[10px] text-gray-500 italic">Professional makeup for all occasions</p>
+                    </div>
+                    <span class="gold-text text-sm serif italic">On Request</span>
+                </div>
+                <div class="luxury-card p-6 flex justify-between items-center group">
+                    <div class="space-y-1">
+                        <h4 class="text-sm font-semibold tracking-wide uppercase group-hover:gold-text transition-colors">Groom Packages</h4>
+                        <p class="text-[10px] text-gray-500 italic">Complete grooming for grooms and men</p>
+                    </div>
+                    <span class="gold-text text-sm serif italic">On Request</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="space-y-8 reveal" style="animation-delay: 0.8s;">
+            <h3 class="text-2xl font-light serif italic text-center tracking-wider">Our Work</h3>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="aspect-square overflow-hidden bg-zinc-900">
+                    <img src="1.jpg" class="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity duration-700" alt="Salon Work 1">
+                </div>
+                <div class="aspect-square overflow-hidden bg-zinc-900">
+                    <img src="2.jpg" class="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity duration-700" alt="Salon Work 2">
+                </div>
+                <div class="aspect-square overflow-hidden bg-zinc-900">
+                    <img src="3.jpg" class="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity duration-700" alt="Salon Work 3">
+                </div>
+                <div class="aspect-square overflow-hidden bg-zinc-900">
+                    <img src="4.jpg" class="w-full h-full object-cover opacity-60 hover:opacity-100 transition-opacity duration-700" alt="Salon Work 4">
+                </div>
+            </div>
+            <p class="text-center text-[10px] text-gray-500">More transformations available on Instagram @muskan.d3</p>
+        </section>
+
+        <!-- Map -->
+        <section class="space-y-8 reveal" style="animation-delay: 1s;">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl font-light serif italic tracking-wider">Visit Us</h3>
+                <p class="text-[10px] text-gray-500 uppercase tracking-widest">Opp. Model Town Park, Delhi Road, Hansi, Haryana</p>
+            </div>
+            <div class="h-64 grayscale opacity-50 contrast-125 border border-white/5 rounded-sm overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3486.4668818920186!2d75.97083337459166!3d29.091894763074233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391239972695d109%3A0xb986635f87bc82e!2sMuskan%20D3%20Unisex%20Family%20Salon!5e0!3m2!1sen!2sin!4v1775462493546!5m2!1sen!2sin" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-10 space-y-6">
+            <div class="flex justify-center space-x-8">
+                <a href="https://www.instagram.com/muskan.d3/" target="_blank" class="text-gray-600 hover:text-[#c5a059] transition"><i class="fab fa-instagram text-sm"></i></a>
+                <a href="tel:+919812084102" class="text-gray-600 hover:text-[#c5a059] transition"><i class="fas fa-phone text-sm"></i></a>
+            </div>
+            <div class="text-[10px] text-gray-500">
+                <p>Opp. Model Town Park, Delhi Road, Hansi</p>
+                <p>+91 98120 84102</p>
+                <p>10:00 AM - 08:00 PM (Open All Days)</p>
+            </div>
+            <p class="text-[9px] text-gray-700 uppercase tracking-[0.4em]">Premium Unisex Salon - Hansi</p>
+            
+            <div class="pt-6 border-t border-gray-800">
+                <p class="text-xs text-amber-400">Crafted by</p>
+                Om Advertisement Hansi  <a href="tel:+918708646546" class="text-lg gold-text hover:underline">+91 87086 46546</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('section, header, div.grid').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
